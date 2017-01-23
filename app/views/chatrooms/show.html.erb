@@ -1,0 +1,7 @@
+<h1><%= @chatroom.name %></h1>
+
+<div id="messages">
+  <% @chatroom.messages.each do |message| %>
+    <p><%= message.content %></p>
+  <% end %>
+</div>

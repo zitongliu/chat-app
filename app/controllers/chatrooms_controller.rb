@@ -10,4 +10,23 @@ class ChatroomsController < ApplicationController
 
   end
 
+  def new
+    @chatroom = Chatroom.new
+  end
+
+  def create
+    @chatroom = Chatroom.new chatroom_params
+    @chatroom.user_id = 4
+    if @chatroom.save
+      redirect_to chatrooms_path
+    else
+      redirect_to new_chatroom_path
+    end
+  end
+
+  private
+    def chatroom_params
+      params.require(:chatroom).permit(:name)
+    end
+
 end
