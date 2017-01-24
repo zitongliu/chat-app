@@ -8,4 +8,7 @@ Rails.application.routes.draw do
   post "/login" => 'sessions#create'
   delete "/login" => 'sessions#destroy'
 
+  get '/teams' => 'teams#index'
+  get '/teams/:id' => 'teams#show'
+
 end
