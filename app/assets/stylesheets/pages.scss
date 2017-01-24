@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+html {
+    height: 100%;
+
+}
 
 body {
 
@@ -65,4 +69,14 @@ body {
 .button:hover {
   background-color: dodgerblue;
   color: white
+}
+
+
+
+.login-content-text {
+  padding-top: 0vh;
+  text-align: center;
+  margin: auto;
+  color: white;
+  position: relative;
 }
