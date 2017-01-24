@@ -1,41 +1,44 @@
 
-App.chatrooms = App.cable.subscriptions.create({
-    channel: "ChatroomsChannel", // Describes which channel it corresponds to
-    team: "RANDOM" // Anything else will be in params
-  }, {
-  connected: function () {
-    console.log("Connected to the ChatroomsChannel");
-  },
-  disconnected: function () {},
-  received: function (data) {
-    $('#test-chatroom').append( data.message );
-  },
-  speak: function ( message ) {
-    this.perform( 'speak', {
-      message: message
-    });
-  }
-});
+$( document ).ready(function(){
+  $messages = $('#messages');
+  var chatroomID = $messages.data('chatroom-id');
 
-// App.chatrooms = App.cable.subscriptions.create "ChatroomsChannel",
-//   connected: ->
-//     # Called when the subscription is ready for use on the server
-//
-//   disconnected: ->
-//     # Called when the subscription has been terminated by the server
-//
-//   received: (data) ->
-//     # Called when there's incoming data on the websocket for this channel
-//     $('#test-chatroom').append data['message']
-//
-//   speak: (message) ->
-//     @perform 'speak', message: message
+  App.chatrooms = App.cable.subscriptions.create({
+      channel: "ChatroomsChannel", // Describes which channel it corresponds to
+      chatroom_id: chatroomID
+
+      // team: "RANDOM" // Anything else will be in params
+    }, {
+    connected: function () {
+      console.log("Connected to the ChatroomsChannel");
+    },
+    disconnected: function () {},
+    received: function (data) {
+      $('#messages').append( data.message );
+    },
+    speak: function ( message ) {
+      console.log( chatroomID );
+      this.perform( 'speak', {
+        message: message,
+        chatroom_id: chatroomID
+      });
+    }
+  });
+
+  $(document).on('keypress', '.socket-input', function (event) {
+    if (event.keyCode === 13) {
+      App.chatrooms.speak( event.target.value );
+      event.target.value = '';
+      event.preventDefault();
+    }
+  });
 
 
-$(document).on('keypress', '.socket-input', function (event) {
-  if (event.keyCode === 13) {
-    App.chatrooms.speak( event.target.value );
-    event.target.value = '';
-    event.preventDefault();
-  }
+
+
+
+
+
+
+
 });

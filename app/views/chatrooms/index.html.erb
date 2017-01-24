@@ -10,7 +10,7 @@
 </ul>
 
 
-<div id="test-chatroom">
+<div id="messages" data-chatroom-id="<%= @chatrooms.first.id %>" >
   <h1>Global Message Section</h1>
   <%# @chatrooms.first.messages.each do |message| %>
   <% Message.all.each do |message| %>
@@ -18,10 +18,7 @@
   <% end %>
 </div>
 <hr>
-<div id="messages" >
-  <%#= render @messages %>
-  <%#= render partial: "message", object: @messages %>
-</div>
+
 
 
 

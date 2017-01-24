@@ -1,13 +1,17 @@
 <h1><%= @chatroom.name %></h1>
 
-<div id="messages">
+<div class="controls">
+  <%= link_to "Delete Chatroom", chatroom_path( @chatroom ), :method => :delete, :data => { :confirm => "Are you sure?" } %>
+</div>
+
+
+<div id="messages" data-chatroom-id="<%= @chatroom.id %>">
   <% @chatroom.messages.each do |message| %>
     <p><%= message.content %></p>
   <% end %>
 </div>
 
-
-
-<div class="controls">
-  <%= link_to "Delete Chatroom", chatroom_path( @chatroom ), :method => :delete, :data => { :confirm => "Are you sure?" } %>
-</div>
+<form>
+  <label>Say something</label><br>
+  <input type="text" class="socket-input" data-behavior="chatroom_speaker">
+</form>
