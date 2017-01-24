@@ -1,5 +1,11 @@
-App.chatrooms = App.cable.subscriptions.create("ChatroomsChannel", {
-  connected: function () {},
+
+App.chatrooms = App.cable.subscriptions.create({
+    channel: "ChatroomsChannel", // Describes which channel it corresponds to
+    team: "RANDOM" // Anything else will be in params
+  }, {
+  connected: function () {
+    console.log("Connected to the ChatroomsChannel");
+  },
   disconnected: function () {},
   received: function (data) {
     $('#test-chatroom').append( data.message );
