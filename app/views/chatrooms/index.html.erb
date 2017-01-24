@@ -8,3 +8,17 @@
     <li><%= link_to("#{chatroom.name}",chatroom_path(chatroom) ) %></li>
   <% end %>
 </ul>
+
+
+<div id="test-chatroom">
+  <h1>Global Message Section</h1>
+  <%# @chatrooms.first.messages.each do |message| %>
+  <% Message.all.each do |message| %>
+    <p><%= message.content %></p>
+  <% end %>
+</div>
+
+<form>
+  <label>Say something</label><br>
+  <input type="text" class="socket-input" data-behavior="chatroom_speaker">
+</form>
