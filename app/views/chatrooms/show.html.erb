@@ -1,9 +1,15 @@
 <aside class="left-container">
+  <h4>Channels</h4>
   <ul>
     <% @chatrooms.each do |chatroom| %>
       <li><%= link_to("#{chatroom.name}",chatroom_path(chatroom) ) %></li>
     <% end %>
   </ul>
+  <h4>Members</h4>
+  <% @team.users.each do |user| %>
+    <li><%= user.name %></li>
+  <% end %>
+
 </aside>
 
 <section class="right-container">

@@ -1,9 +1,30 @@
 
 $( document ).ready(function(){
+  var userID = 0;
+
+  $.ajax({
+    // The URL for the request
+    url: "/chatrooms",
+    // The type of request
+    type: "GET",
+    // The type of data we expect back
+    dataType : "json",
+    // The data to send (will be converted to a query string and added to the URL)
+  })
+  .done(function(data) {
+    // Do something with the response
+    userID = data.userID;
+    console.log("The user ID is: ", userID);
+  })
+  .fail(function(error) {
+    // Do something with the error
+  });
+
+
 
   // Get user id from div
-  var userID  = $("#hidden").html();
-  console.log("The user ID is: ", userID);
+  // var userID  = $("#hidden").html();
+
 
 
 

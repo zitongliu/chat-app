@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       session[:team_id] = user.team_id
 
-      redirect_to user_path( user.id )
+      redirect_to chatrooms_path
     else
       flash[:error] = "The password or email was incorrect"
       render :new

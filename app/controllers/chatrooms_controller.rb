@@ -2,6 +2,17 @@ class ChatroomsController < ApplicationController
   def index
     @chatrooms = Chatroom.all
     @messages = Message.all
+    @userID = session[:user_id]
+    @team = Team.find_by( :id => session[:team_id] )
+
+    @response = {
+    :userID => @userID
+  }
+
+  respond_to do |format|
+    format.html # This will render generator.html.erb in response to requests for HTML
+    format.json { render json: @response } # This will render JSON in response to AJAX requests
+  end
 
 
   end
@@ -10,6 +21,7 @@ class ChatroomsController < ApplicationController
     @messages = Message.all
     @message = Message.new
     @chatrooms = Chatroom.all
+    @team = Team.find_by( :id => session[:team_id] )
   end
 
   def new
