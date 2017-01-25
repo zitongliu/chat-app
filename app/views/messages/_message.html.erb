@@ -1,5 +1,5 @@
 <% cache message do %>
   <div class="message">
-    <p><%= message.content %></p>
+    <p><%= message.content %><br> - written by <%= message.user.username %></p>
   </div>
 <% end %>

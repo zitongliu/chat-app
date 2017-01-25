@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
       flash[:success] = "You successfully logged in"
       session[:user_id] = user.id
       session[:team_id] = user.team_id
+      session[:username] = user.username
 
       redirect_to chatrooms_path
     else

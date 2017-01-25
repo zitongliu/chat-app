@@ -9,12 +9,15 @@ html {
 
 body {
 
+  font-family: 'Quicksand', sans-serif;
+
+}
+
+body.pages.home {
   background-image: url("http://eskipaper.com/images/yosemite-background-1.jpg");
   background-position: center;
   background-size: auto;
   background-repeat: no-repeat;
-  font-family: 'Quicksand', sans-serif;
-
 }
 
 #hidden {
@@ -29,13 +32,10 @@ body {
   padding: 3em;
   text-align: center;
   margin-top: 20vh;
-  // margin-left: 10vw;
-
-
+  text-align: center;
+  margin-left: 10vw;
   height:50vh;
   width:50vw;
-
-
 
 }
 
@@ -74,6 +74,10 @@ body {
 
 }
 
+.button-light:hover {
+  color: white;
+  background-color: dodgerblue;
+}
 .button:hover {
   background-color: dodgerblue;
   color: white
@@ -81,13 +85,7 @@ body {
 
 
 
-.login-content-text {
-  padding-top: 0vh;
-  text-align: center;
-  margin: auto;
-  color: white;
-  position: relative;
-}
+
 
 
 .left-container {

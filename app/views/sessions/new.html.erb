@@ -1,22 +1,19 @@
 <div class="container">
 
 
-  <div class="home-content-container">
-    <div class="home-content-background">
-
-    </div>
+  <div class="form-container">
     <div class="login-content-text">
       <h1>Login</h1>
       <%= form_tag login_path do %>
         <p>
           <%= label_tag :email %>
-          <%= email_field_tag :email, "", :required => true %>
+          <%= email_field_tag :email, "", :class => "u-full-width", :required => true %>
         </p>
         <p>
           <%= label_tag :password %>
-          <%= password_field_tag :password, "", :required => true %>
+          <%= password_field_tag :password, "", :class => "u-full-width", :required => true %>
         </p>
-        <%= submit_tag("Login", :class =>'button', :style => "color:white;")%>
+        <%= submit_tag("Login", :class =>'button-light')%>
       <% end %>
     </div>
   </div>
