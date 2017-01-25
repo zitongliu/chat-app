@@ -3,6 +3,7 @@ $( document ).ready(function(){
   $messages = $('#messages');
   var chatroomID = $messages.data('chatroom-id');
 
+
   App.chatrooms = App.cable.subscriptions.create({
       channel: "ChatroomsChannel", // Describes which channel it corresponds to
       chatroom_id: chatroomID

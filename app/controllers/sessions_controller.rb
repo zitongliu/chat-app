@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
     if user.present? && user.authenticate( params[:password] )
       flash[:success] = "You successfully logged in"
       session[:user_id] = user.id
+      session[:team_id] = user.team_id
 
       redirect_to user_path( user.id )
     else

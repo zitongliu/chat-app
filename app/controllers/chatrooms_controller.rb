@@ -18,8 +18,9 @@ class ChatroomsController < ApplicationController
 
   def create
     @chatroom = Chatroom.new chatroom_params
-    @chatroom.user_id = 22
-    @chatroom.team_id = 22
+    @chatroom.user_id = session[:user_id]
+    @chatroom.team_id = session[:team_id]
+    # binding.pry
     if @chatroom.save
       redirect_to chatrooms_path
     else
