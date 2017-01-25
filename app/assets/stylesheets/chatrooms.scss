@@ -3,12 +3,41 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.chatrooms {
+.main-container {
   text-align: center;
+  position: relative;
+  width: 70vw;
+  min-height: 50vh;
+  top: 5vh;
+  left: 5vw;
+
+  background-color: white;
+
 }
 
-.chatrooms-container {
-  background-color: #fff;
-  margin-top: 10vh;
-  padding: 5em;
+.chatroom-title-container {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  border: 1px solid gainsboro;
+  height: 1%;
+}
+
+.chatroom-content-container {
+  position: relative;
+  height: 60vh;
+  overflow-y: scroll;
+}
+
+.chatroom-input-container {
+  padding-top: 2vh;
+  background-color: white;
+  position: relative;
+  height: 8vh;
+  border: 1px solid gainsboro;
+}
+
+.chatroom-title-container h1 {
+  font-size: 1.5em;
 }

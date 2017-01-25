@@ -9,7 +9,7 @@ class ChatroomsController < ApplicationController
     @chatroom = Chatroom.find_by( :id => params[:id] )
     @messages = Message.all
     @message = Message.new
-
+    @chatrooms = Chatroom.all
   end
 
   def new

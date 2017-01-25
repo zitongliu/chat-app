@@ -8,28 +8,15 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
   </head>
-
-  <!-- <nav id="main-nav">
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><%= link_to("Teams", teams_path)%></li>
-      <li><%= link_to("Chatrooms", chatrooms_path) %></li>
-      <% unless @current_user.present? %>
-        <li >
-          <%= link_to "Sign Up", new_user_path, class: "waves-effect waves-light btn" %>
-        </li>
-        <li>
-          <a href="/login">Login</a>
-        </li>
-      <% else %>
-        <li>
-          <%= link_to "Logout | #{@current_user.email}", login_path, :method => :delete, class: "waves-effect waves-light btn" %>
-        </li>
-      <% end %>
-    </ul>
-  </nav> -->
-
   <body>
+
+
     <%= yield %>
+
+    <div id="hidden">
+      <%= session[:user_id]%>
+    </div>
   </body>
+
+
 </html>

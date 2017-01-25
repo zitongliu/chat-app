@@ -1,5 +1,12 @@
 
 $( document ).ready(function(){
+
+  // Get user id from div
+  var userID  = $("#hidden").html();
+  console.log("The user ID is: ", userID);
+
+
+
   $messages = $('#messages');
   var chatroomID = $messages.data('chatroom-id');
 
@@ -21,7 +28,8 @@ $( document ).ready(function(){
       console.log( chatroomID );
       this.perform( 'speak', {
         message: message,
-        chatroom_id: chatroomID
+        chatroom_id: chatroomID,
+        user_id: userID
       });
     }
   });

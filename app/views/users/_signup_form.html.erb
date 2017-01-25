@@ -1,29 +1,49 @@
-
-
 <%= form_for @user, :html => { :multipart => true } do |f| %>
-  <p>
-    <%= f.label :username %>
-    <%= f.text_field :username, :required => true %>
-  </p>
-  <p>
-    <%= f.label :name %>
-    <%= f.text_field  :name, :required => false %>
-  </p>
-  <p>
-    <%= f.label :email %>
-    <%= f.email_field :email, :required => true %>
-  </p>
-  <p>
-    <%= f.label :password %>
-    <%= f.password_field :password, :required => true %>
-  </p>
-  <p>
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation, :required => true %>
-  </p>
-  <p>
-    <%= f.label :team_id %>
-    <%= f.collection_select( :team_id, Team.all, :id, :name, :include_blank => true ) %>
-  </p>
-  <%= f.submit %>
+<div class="row">
+  <div class="six columns">
+    <p>
+      <%= f.label :username %>
+      <%= f.text_field :username, :class => "u-full-width", :required => true %>
+    </p>
+  </div>
+  <div class="six columns">
+    <p>
+      <%= f.label :name %>
+      <%= f.text_field  :name, :class => "u-full-width", :required => false %>
+    </p>
+  </div>
+</div>
+<div class="row">
+  <div class="12 columns">
+    <p>
+      <%= f.label :email %>
+      <%= f.email_field :email, :class => "u-full-width", :required => true %>
+    </p>
+  </div>
+</div>
+
+<div class="row">
+
+  <div class="six columns">
+    <p>
+      <%= f.label :password %>
+      <%= f.password_field :password,:class => "u-full-width", :required => true %>
+    </p>
+  </div>
+  <div class="six columns">
+    <p>
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation,:class => "u-full-width", :required => true %>
+    </p>
+  </div>
+</div>
+
+<div class="row">
+    <p>
+      <%= f.label :team_id %>
+      <%= f.collection_select( :team_id, Team.all, :id, :name,  :include_blank => true ) %>
+    </p>
+</div>
+
+  <%= f.submit :class =>'button', :style => "color:white;"%>
 <% end %>
