@@ -1,28 +1,36 @@
-<h1>All Chatrooms</h1>
 
-<p><%= link_to 'New chat room', new_chatroom_path, class: 'placeholder' %></p>
+<div class="container chatrooms">
+  <div class="chatrooms-container">
 
+    <h1>All Chatrooms</h1>
 
-<ul>
-  <% @chatrooms.each do |chatroom| %>
-    <li><%= link_to("#{chatroom.name}",chatroom_path(chatroom) ) %></li>
-  <% end %>
-</ul>
+    <p><%= link_to 'New chat room', new_chatroom_path, class: 'placeholder' %></p>
 
 
-<div id="messages" data-chatroom-id="<%= @chatrooms.first.id %>" >
-  <h1>Global Message Section</h1>
-  <%# @chatrooms.first.messages.each do |message| %>
-  <% Message.all.each do |message| %>
-    <p><%= message.content %></p>
-  <% end %>
+    <ul>
+      <% @chatrooms.each do |chatroom| %>
+        <li><%= link_to("#{chatroom.name}",chatroom_path(chatroom) ) %></li>
+      <% end %>
+    </ul>
+
+
+    <div id="messages" data-chatroom-id="<%= @chatrooms.first.id %>" >
+      <h1>Global Message Section</h1>
+      <%# @chatrooms.first.messages.each do |message| %>
+      <% Message.all.each do |message| %>
+        <p><%= message.content %></p>
+      <% end %>
+    </div>
+    <hr>
+
+
+
+
+    <form>
+      <label>Say something</label><br>
+      <input type="text" class="socket-input" data-behavior="chatroom_speaker">
+    </form>
+  </div>
+
+
 </div>
-<hr>
-
-
-
-
-<form>
-  <label>Say something</label><br>
-  <input type="text" class="socket-input" data-behavior="chatroom_speaker">
-</form>

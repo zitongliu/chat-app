@@ -13,9 +13,10 @@ body {
   background-position: center;
   background-size: auto;
   background-repeat: no-repeat;
-
+  font-family: 'Quicksand', sans-serif;
 
 }
+
 
 .home-content-container {
   position: relative;
@@ -52,6 +53,7 @@ body {
 }
 .home-content-text h1{
   font-size: 3.5em;
+  font-weight: lighter;
 }
 
 .home-content-text h3{
@@ -63,6 +65,7 @@ body {
 .button {
   color: white;
   font-size: 1em;
+  font-weight: 100;
 
 }
 
