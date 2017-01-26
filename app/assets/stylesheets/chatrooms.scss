@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body.chatrooms.index {
-  background-image: url("space.jpg");
+  background-image: url("lake.jpg");
   background-position: center;
   background-size: auto;
   background-repeat: no-repeat;
@@ -52,7 +52,31 @@ body.chatrooms.index {
   position: relative;
   width: 30vw;
   height: 30vh;
-  background-color: red;
+  font-family: cursive;
+  color: white;
+  font-weight: 900;
   top: 50vh;
   left: 5vw;
+}
+
+.time {
+  font-family: inherit;
+  font-size: 2em;
+}
+
+.chatroom-left-main {
+  position: relative;
+}
+
+.chatroom-left-background {
+  position: absolute;
+  top: 0px;
+  left: -2px;
+  background:rgba(0,0,0,0.8);
+  filter: url("lake.jpg");
+  -webkit-filter: blur(2px);
+  filter: blur(2px);
+  height: 100%;
+  width: 100%;
+  z-index: -10;
 }

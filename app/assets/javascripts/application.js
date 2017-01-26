@@ -14,3 +14,17 @@
 //= require jquery_ujs
 //= require cable
 //= require_tree .
+
+var currentTime = Date();
+$(document).ready(function(){
+
+  $(".time").html(currentTime);
+
+  setInterval(function() {
+    currentTime = Date();
+    $(".time").html(currentTime);
+  }, 1000);
+
+
+
+});

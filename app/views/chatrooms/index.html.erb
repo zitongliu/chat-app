@@ -1,19 +1,35 @@
 <aside class="left-container">
-  <h4>Channels</h4>
-  <p><%= link_to 'New chat room', new_chatroom_path, class: 'placeholder' %></p>
-  <ul>
-    <% @chatrooms.each do |chatroom| %>
-      <li><%= link_to("#{chatroom.name}",chatroom_path(chatroom) ) %></li>
-    <% end %>
-  </ul>
-  <h4>Members</h4>
-  <% @team.users.each do |user| %>
-    <li><%= user.name %></li>
-  <% end %>
+  <div class="chatroom-left-main">
+
+
+    <div class="chatroom-left-background">
+
+    </div>
+
+
+    <div class="chatroom-left-content">
+      <h4>Channels</h4>
+      <p><%= link_to 'New chat room', new_chatroom_path, class: 'placeholder' %></p>
+      <ul>
+        <% @chatrooms.each do |chatroom| %>
+          <li><%= link_to("#{chatroom.name}",chatroom_path(chatroom) ) %></li>
+        <% end %>
+      </ul>
+      <h4>Members</h4>
+      <% @team.users.each do |user| %>
+        <li><%= user.name %></li>
+      <% end %>
+    </div>
+
+
+
+
+  </div>
 </aside>
 
 <section class="right-container">
     <div class="welcome-back-message-container">
+      <div class="time"></div>
       <h1>Welcome back <%= session[:name]%></h1>
     </div>
 </section>
