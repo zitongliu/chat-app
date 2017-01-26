@@ -6,19 +6,38 @@
 
     </div>
 
+    <<div class="logo">
+      <br>
+      <br>
+    </div>
+
 
     <div class="chatroom-left-content">
-      <h4>Channels</h4>
-      <p><%= link_to 'New chat room', new_chatroom_path, class: 'placeholder' %></p>
-      <ul>
-        <% @chatrooms.each do |chatroom| %>
-          <li><%= link_to("#{chatroom.name}",chatroom_path(chatroom) ) %></li>
-        <% end %>
-      </ul>
+      <h4 class="left-title">Channels</h4>
+      <div class="add-button-container">
+        <div class="featured-image">
+        <div class="round-button">
+          <div class="round-button-circle">
+            <a href="/chatrooms/new" class="round-button">+</a>
+          </div>
+        </div>
+        </div>
+      </div>
+
+
+      <div class="chatroom-left-listing">
+          <% @chatrooms.each do |chatroom| %>
+            <%= link_to("#{chatroom.name}",chatroom_path(chatroom) ) %>
+          <% end %>
+      </div>
+      <br>
       <h4>Members</h4>
-      <% @team.users.each do |user| %>
-        <li><%= user.name %></li>
-      <% end %>
+      <div class="chatroom-left-listing">
+        <% @team.users.each do |user| %>
+          <a><%= user.name %></a>
+        <% end %>
+      </div>
+
     </div>
 
 
