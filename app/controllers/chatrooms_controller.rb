@@ -1,5 +1,9 @@
 class ChatroomsController < ApplicationController
   def index
+    if session[:user_id] == nil
+      redirect_to login_path
+    end
+
     @chatrooms = Chatroom.all
     @messages = Message.all
     @userID = session[:user_id]
@@ -8,7 +12,7 @@ class ChatroomsController < ApplicationController
     @response = {
     :userID => @userID
   }
-  
+
   respond_to do |format|
     format.html # This will render generator.html.erb in response to requests for HTML
     # format.json { render json: @response } # This will render JSON in response to AJAX requests
@@ -17,6 +21,10 @@ class ChatroomsController < ApplicationController
 
   end
   def show
+    if session[:user_id] == nil
+      redirect_to login_path
+    end
+    @userID = session[:user_id]
     @chatroom = Chatroom.find_by( :id => params[:id] )
     @messages = Message.all
     @message = Message.new

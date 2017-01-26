@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
       # If in the session hash, there a user_id key
         # Find the user with that ID and save them in a instance variable called @current_user
         # If you weren't able to find a user with that ID, set session[:user_id] to nil
+
     end
 
 end
