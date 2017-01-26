@@ -1,19 +1,54 @@
 <aside class="left-container">
-  <h4>Channels</h4>
-  <ul>
-    <% @chatrooms.each do |chatroom| %>
-      <li><%= link_to("#{chatroom.name}",chatroom_path(chatroom) ) %></li>
-    <% end %>
-  </ul>
-  <h4>Members</h4>
-  <% @team.users.each do |user| %>
-    <li><%= user.name %></li>
-  <% end %>
+  <div class="chatroom-left-main">
 
+
+    <div class="chatroom-left-background">
+
+    </div>
+
+    <<div class="logo">
+      <br>
+      <br>
+    </div>
+
+
+    <div class="chatroom-left-content">
+      <h4 class="left-title">Channels</h4>
+      <div class="add-button-container">
+        <div class="featured-image">
+        <div class="round-button">
+          <div class="round-button-circle">
+            <a href="/chatrooms/new" class="round-button">+</a>
+          </div>
+        </div>
+        </div>
+      </div>
+
+      <a href="/chatrooms" class="button">Return Home</a>
+
+      <div class="chatroom-left-listing">
+          <% @chatrooms.each do |chatroom| %>
+            <%= link_to("#{chatroom.name}",chatroom_path(chatroom) ) %>
+          <% end %>
+      </div>
+      <br>
+      <h4>Members</h4>
+      <div class="chatroom-left-listing">
+        <% @team.users.each do |user| %>
+          <a><%= user.name %></a>
+        <% end %>
+      </div>
+
+    </div>
+
+
+
+  </div>
 </aside>
 
 <section class="right-container">
-  <div class="container main-container">
+
+
     <div class="chatroom-title-container">
       <h1><%= @chatroom.name %></h1>
       <div class="controls">
@@ -40,14 +75,21 @@
     </div>
     <div class="chatroom-input-container">
       <form>
-        <input placeholder="Say something..." type="text" class="socket-input" data-behavior="chatroom_speaker">
+        <input placeholder="Say something..." type="text" class="socket-input " data-behavior="chatroom_speaker">
       </form>
     </div>
 
 
-  </div>
 </section>
 
 <script>
   var userID = <%= @current_user.id %>;
+
+  var randomColor1 = Math.floor(Math.random()*16777215).toString(16);
+  var randomColor2 = Math.floor(Math.random()*16777215).toString(16);
+
+  $(document).ready(function(){
+    $(".chatroom-title-container").css("background",'linear-gradient(to left, #' + randomColor1 + ', #' + randomColor2+')')
+  });
+
 </script>

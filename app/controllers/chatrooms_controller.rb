@@ -30,6 +30,23 @@ class ChatroomsController < ApplicationController
     @message = Message.new
     @chatrooms = Chatroom.all
     @team = Team.find_by( :id => session[:team_id] )
+
+
+    @gradients = [
+        ["background: #556270; /* fallback for old browsers */",
+          "background: -webkit-linear-gradient(to left, #556270 , #FF6B6B); /* Chrome 10-25, Safari 5.1-6 */",
+
+          "background: linear-gradient(to left, #556270 , #FF6B6B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+          "
+        ],
+        ["background: #9D50BB; /* fallback for old browsers */",
+          "background: -webkit-linear-gradient(to left, #9D50BB , #6E48AA); /* Chrome 10-25, Safari 5.1-6 */
+",
+
+          "background: linear-gradient(to left, #9D50BB , #6E48AA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */"
+        ]
+      ]
+
   end
 
   def new
