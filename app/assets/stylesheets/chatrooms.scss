@@ -2,6 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body.chatrooms.index {
+  background-image: url("space.jpg");
+  background-position: center;
+  background-size: auto;
+  background-repeat: no-repeat;
+}
 
 .main-container {
   text-align: center;
@@ -40,4 +46,13 @@
 
 .chatroom-title-container h1 {
   font-size: 1.5em;
+}
+
+.welcome-back-message-container {
+  position: relative;
+  width: 30vw;
+  height: 30vh;
+  background-color: red;
+  top: 50vh;
+  left: 5vw;
 }

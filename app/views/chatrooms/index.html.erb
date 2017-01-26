@@ -1,5 +1,6 @@
 <aside class="left-container">
   <h4>Channels</h4>
+  <p><%= link_to 'New chat room', new_chatroom_path, class: 'placeholder' %></p>
   <ul>
     <% @chatrooms.each do |chatroom| %>
       <li><%= link_to("#{chatroom.name}",chatroom_path(chatroom) ) %></li>
@@ -9,25 +10,10 @@
   <% @team.users.each do |user| %>
     <li><%= user.name %></li>
   <% end %>
-
 </aside>
 
-
-  <div class="container main-container">
-    <div class="chatrooms-container">
-
-      <h1>All Chatrooms</h1>
-
-      <p><%= link_to 'New chat room', new_chatroom_path, class: 'placeholder' %></p>
-
-
-      <ul>
-        <% @chatrooms.each do |chatroom| %>
-          <li><%= link_to("#{chatroom.name}",chatroom_path(chatroom) ) %></li>
-        <% end %>
-      </ul>
-
+<section class="right-container">
+    <div class="welcome-back-message-container">
+      <h1>Welcome back <%= session[:name]%></h1>
     </div>
-
-  </div>
 </section>

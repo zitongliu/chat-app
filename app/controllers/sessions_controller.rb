@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       session[:team_id] = user.team_id
       session[:username] = user.username
+      session[:name] = user.name
 
       redirect_to chatrooms_path
     else

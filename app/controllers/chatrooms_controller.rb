@@ -8,10 +8,10 @@ class ChatroomsController < ApplicationController
     @response = {
     :userID => @userID
   }
-
+  
   respond_to do |format|
     format.html # This will render generator.html.erb in response to requests for HTML
-    format.json { render json: @response } # This will render JSON in response to AJAX requests
+    # format.json { render json: @response } # This will render JSON in response to AJAX requests
   end
 
 
