@@ -1,5 +1,16 @@
 <% cache message do %>
   <div class="message">
-    <p><%= message.content %><br> - written by <%= message.user.username %></p>
+    <% if false  %>
+    <p><%= message.user.image %></p>
+    <% else %>
+    <div class="message-avatar">
+      <img src="http://tr3.cbsistatic.com/fly/bundles/techrepubliccore/images/icons/standard/icon-user-default.png">
+    </div>
+    <% end %>
+    <div class="message-content">
+      <p><%= message.user.username %> <br>
+      <%= message.content %></p>
+    </div>
+
   </div>
 <% end %>

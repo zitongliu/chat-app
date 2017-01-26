@@ -60,6 +60,7 @@
     <div class="chatroom-content-container">
       <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
         <% @chatroom.messages.each do |message| %>
+          
           <%= render :partial => "messages/message", locals: { message: message } %>
           <!-- <div class="row">
             <div class="three columns">
