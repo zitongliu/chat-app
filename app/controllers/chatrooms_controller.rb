@@ -8,6 +8,7 @@ class ChatroomsController < ApplicationController
     @messages = Message.all
     @userID = session[:user_id]
     @team = Team.find_by( :id => session[:team_id] )
+    @user_current = User.find_by(:id => session[:user_id])
 
     unless @team
       session[:team_id] = nil

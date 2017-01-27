@@ -53,7 +53,11 @@
     <div class="user-menu">
       <a href="users/<%=@userID%>/edit" class="button"> Edit User</a>
       <%= link_to "Logout", login_path, :method => :delete, class: "button" %>
+      <div class="avatar-container">
+        <%=cl_image_tag(@user_current.image, class: "big-avatar")%>
+      </div>
     </div>
+
 
 
     <div class="welcome-back-message-container">
