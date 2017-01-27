@@ -9,7 +9,11 @@ class ChatroomsController < ApplicationController
     @userID = session[:user_id]
     @team = Team.find_by( :id => session[:team_id] )
 
-    session[:team_id] = nil unless @team
+    unless @team
+      session[:team_id] = nil
+      redirect_to "/users/new"
+    end
+
 
     @response = {
     :userID => @userID
@@ -32,6 +36,11 @@ class ChatroomsController < ApplicationController
     @message = Message.new
     @chatrooms = Chatroom.all
     @team = Team.find_by( :id => session[:team_id] )
+
+    unless @team
+      session[:team_id] = nil
+      redirect_to "/users/new"
+    end
 
 
     @gradients = [
