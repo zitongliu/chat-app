@@ -44,6 +44,10 @@
       <%= f.collection_select( :team_id, Team.all, :id, :name,  :include_blank => true ) %>
     </p>
 </div>
+<p>
+  <%= f.label :image %>
+  <%= f.cl_image_upload  :image, :required => false %>
+</p>
 
   <%= f.submit :class =>'button'%>
 <% end %>

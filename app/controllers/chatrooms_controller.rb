@@ -9,6 +9,8 @@ class ChatroomsController < ApplicationController
     @userID = session[:user_id]
     @team = Team.find_by( :id => session[:team_id] )
 
+    session[:team_id] = nil unless @team
+
     @response = {
     :userID => @userID
   }

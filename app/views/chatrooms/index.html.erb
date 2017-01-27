@@ -33,8 +33,10 @@
       <br>
       <h4>Members</h4>
       <div class="chatroom-left-listing">
-        <% @team.users.each do |user| %>
-          <a><%= user.name %></a>
+        <% if @team %>
+          <% @team.users.each do |user| %>
+            <a><%= user.name %></a>
+          <% end %>
         <% end %>
       </div>
 

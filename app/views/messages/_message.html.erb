@@ -4,7 +4,7 @@
     <p><%= message.user.image %></p>
     <% else %>
     <div class="message-avatar">
-      <img src="http://tr3.cbsistatic.com/fly/bundles/techrepubliccore/images/icons/standard/icon-user-default.png">
+      <%=cl_image_tag(message.user.image, class: "chat-message-image")%>
     </div>
     <% end %>
     <div class="message-content">

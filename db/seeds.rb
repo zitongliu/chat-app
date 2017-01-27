@@ -1,3 +1,5 @@
+Message.destroy_all
+
 Team.destroy_all
 
 t1 = Team.create :name => "Mr Ape's Truckings Co"
@@ -6,11 +8,11 @@ t2 = Team.create :name => "Marx Brothers Ace Team"
 puts "USERS!"
 User.destroy_all
 
-u1 = User.create :username => "groucho", :name => 'Groucho Marx', :email => 'groucho@ga.co', :password => "chicken", :password_confirmation => "chicken", :team_id => t1.id
+u1 = User.create :username => "groucho", :name => 'Groucho Marx', :email => 'groucho@ga.co', :password => "chicken", :image => "avatar_jwrxm0", :password_confirmation => "chicken", :team_id => t1.id
 
-u2 = User.create :username => "harpo", :name => 'Harpo Marx', :email => 'kristina@email.com', :password => "chicken", :password_confirmation => "chicken", :team_id => t1.id
+u2 = User.create :username => "harpo", :name => 'Harpo Marx', :email => 'harpo@email.com', :password => "chicken", :image => "avatar_jwrxm0", :password_confirmation => "chicken", :team_id => t1.id
 
-u3 = User.create :username => "zeppo", :name => 'Zeppo Marx', :email => 'josephs@email.com', :password => "chicken", :password_confirmation => "chicken", :team_id => t2.id
+u3 = User.create :username => "zeppo", :name => 'Zeppo Marx', :email => 'zeppo@email.com', :password => "chicken", :image => "avatar_jwrxm0", :password_confirmation => "chicken", :team_id => t2.id
 
 
 puts "\tUser count: #{ User.all.count }"
