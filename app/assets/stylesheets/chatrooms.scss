@@ -1,0 +1,188 @@
+// Place all the styles related to the chatrooms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body.chatrooms.index {
+
+  background-image: url("lake.jpg");
+
+  background-position: center;
+  background-size: auto;
+  background-repeat: no-repeat;
+}
+
+body.chatrooms.show {
+
+}
+
+.main-container {
+  text-align: center;
+  position: relative;
+  width: 70vw;
+  min-height: 50vh;
+  top: 5vh;
+  left: 5vw;
+
+  background-color: white;
+
+}
+
+.chatroom-title-container {
+  position: absolute;
+  top: 0vh;
+  left: 0vw;
+  width: 78.7vw;
+  height: 15vh;
+  border: 1px solid gainsboro;
+  text-align: center;
+  // background-image: url("lake.jpg");
+  // background-size: cover;
+  // background-color: dodgerblue;
+
+
+  background: #00c6ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #00c6ff , #0072ff); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #00c6ff , #0072ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.chatroom-title-container h1 {
+  color: white;
+  font-size: 2.5em;
+}
+
+.chatroom-title-container a {
+  color: white;
+}
+
+.chatroom-content-container {
+  position: relative;
+  top: 15vh;
+  height: 65vh;
+  width: 78.7vw;
+  overflow-y: scroll;
+  padding-left: 5vw;
+}
+
+.chatroom-input-container {
+  position: relative;
+  top:20vh;
+  padding-top: 2vh;
+  background-color: white;
+  height: 10vh;
+  border: 1px solid gainsboro;
+}
+
+
+.welcome-back-message-container {
+  position: relative;
+  width: 30vw;
+  height: 30vh;
+  font-family: cursive;
+  color: white;
+  font-weight: 900;
+  top: 50vh;
+  left: 5vw;
+}
+
+.time {
+  font-family: inherit;
+  font-size: 2em;
+}
+
+.chatroom-left-main {
+  position: relative;
+  min-height: 100vh;
+}
+
+.chatroom-left-background {
+  position: absolute;
+  top: 0px;
+  left: -2px;
+  background:rgba(0,0,0,0.8);
+  filter: url("lake.jpg");
+  -webkit-filter: blur(2px);
+  filter: blur(2px);
+  height: 100%;
+  width: 100%;
+  z-index: -10;
+}
+
+.chatroom-left-content {
+  padding-left: 2vw;
+}
+.chatroom-left-listing {
+  padding-left: 1vw;
+  height: 30vh;
+  overflow-x: auto;
+}
+
+.chatroom-left-listing a {
+  display: block;
+  text-decoration: none;
+  overflow-y: hidden;
+
+}
+.user-menu {
+  position: absolute;
+  margin-top: 5vh;
+  margin-left: 60vw;
+  z-index: 10;
+}
+
+.left-title {
+  display: inline-block;
+}
+
+.add-button-container {
+  width:1.8vw;
+  display: inline-block;
+
+}
+
+
+.featured-image {
+  max-width:270px;
+}
+
+.round-button {
+	width:100%;
+}
+.round-button-circle {
+	width: 100%;
+	height:0;
+	padding-bottom: 100%;
+    border-radius: 50%;
+	border:2px solid white;
+    overflow:hidden;
+
+    // background: #4679BD;
+    box-shadow: 0 0 3px gray;
+}
+.round-button-circle:hover {
+	background:dodgerblue;
+}
+.round-button a {
+    display:block;
+	float:left;
+	width:100%;
+	padding-top:50%;
+    padding-bottom:50%;
+	line-height:1em;
+	margin-top:-0.5em;
+
+	text-align:center;
+	color:#e2eaf3;
+    font-family:Verdana;
+    font-size:1em;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+.big-avatar {
+  width: 10em;
+  height: 9em;
+  border-radius: 50%;
+  margin-top: 6vh;
+  margin-left: -1vw;
+}
