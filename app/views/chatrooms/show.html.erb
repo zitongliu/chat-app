@@ -60,7 +60,7 @@
     <div class="chatroom-content-container">
       <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
         <% @chatroom.messages.each do |message| %>
-          
+
           <%= render :partial => "messages/message", locals: { message: message } %>
           <!-- <div class="row">
             <div class="three columns">
@@ -76,7 +76,7 @@
     </div>
     <div class="chatroom-input-container">
       <form>
-        <input placeholder="Say something..." type="text" class="socket-input " data-behavior="chatroom_speaker">
+        <input placeholder="Say something..." type="text" class="socket-input input-box" data-behavior="chatroom_speaker">
       </form>
     </div>
 

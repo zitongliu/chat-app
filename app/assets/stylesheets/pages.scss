@@ -4,7 +4,8 @@
 
 html {
     min-height: 100%;
-
+    box-sizing: border-box;
+    position: relative;
 }
 
 body {
@@ -16,7 +17,7 @@ body {
 body.pages.home {
   background-image: url("lake.jpg");
   background-position: center;
-  background-size: auto;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -112,6 +113,7 @@ body.pages.home {
 .right-container {
   position: absolute;
   left: 20vw;
+  width: 80vw;
   min-height: 100vh;
 
 }
